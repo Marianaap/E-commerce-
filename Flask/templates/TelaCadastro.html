@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='telaCadastro.css') }}">
+    <title>Cadastro</title>
+</head>
+    <body>
+
+
+        <div class="form">
+            <div class="cadastro--container">
+               
+        {% with messages = get_flashed_messages() %}
+                {% if messages %} 
+                    <ul id="messages" class="list-unstyled">
+                    {% for message in messages %}
+                        <li class="alert alert-success">{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}   
+           
+           <h1>Faça o seu Cadastro</h1><br><br>
+           <h2>Dados Pessoais </h2>
+           
+           
+           <h1>Endereço</h1> <br>
+           <label for="CEP">CEP</label><br>
+           <input name = cep type="text" ><br>
+           <label for="Cidade">Cidade</label>
+           <input name = cidade type="text" ><br>
+           <label for="Bairro">Bairro</label>
+           <input name = bairro type="text" ><br>
+           <label for="Logradouro">Endereço</label>
+           <input name = endereco type="text"><br>
+           <label for="numero">Número</label>
+           <input name = numero type="text" ><br>
+           <label for="Complemento">Complemento</label>
+           <input name = complemento type="text"><br><br>
+
+           <button><a href="/login"><button>Enviar</button></a><br>
+            
+            </form>
+           
+           </div>
+
+        <footer>
+            
+            <img src="../static/LOGO MRP.png"  width= "150" height="100"> <br>
+           &copy MRP 2021
+
+        </footer>
+
+
+
+</body>
+
+
+</html>

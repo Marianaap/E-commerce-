@@ -1,0 +1,102 @@
+*{
+    margin: 5px;
+    padding: 4px;
+    
+}
+.Destaque{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+header {
+    background-color: #d3d3d3;
+    padding: 30px 10px;
+}
+.caixa {
+    position: relative;
+    width: 700px;
+    margin: 0 auto;
+    
+}
+
+nav {
+    position: absolute;
+    top: 80px;
+    right:80px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 0 0 15px;
+    
+}
+nav a:hover {
+    color: #363636;
+}
+ 
+nav a {
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+  
+}
+.Produtos {
+    width: 940px;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+}
+.Produtos li {
+    display: inline-block;
+    text-align: center;
+    width: 260px;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 2px solid #d3d3d3;
+    border-radius: 10px;
+}
+.Produtos li:hover{
+    border-color: #696969;
+}
+.Produtos li:active {
+    border-color:#1C1C1C;
+
+}
+
+.Produtos h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+.preço-produto {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0 0 ;
+}
+.bt:hover{
+    color: #363636;
+    text-decoration: none;
+}
+.bt {
+background: #d3d3d3;;
+color:black;
+border-style: outset;
+border-color:#d3d3d3;
+height: 50px;
+width: 100px;
+font:bold 15px arial, sans-serif;
+text-shadow: none;
+
+}
+.carousel-inner{
+    position: absolute; 
+    text-align: center;
+}
+footer {
+    text-align:center;
+    background: #d3d3d3;
+    
+}
+.login {
+    width: 500px;
+}

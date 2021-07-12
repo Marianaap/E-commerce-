@@ -1,0 +1,17 @@
+
+.div-img-carousel, .item.active {
+    overflow: hidden;
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    width: 40%;
+}
+
+#meuSlider {
+    width: 700px;
+    height: 400px;
+}
+

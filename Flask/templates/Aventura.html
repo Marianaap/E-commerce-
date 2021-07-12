@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width= device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='Menuprincipal.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+        <title>Livros</title>
+  
+    </head>
+       <body>
+           <header>
+               <div class="Caixa">
+                    <h2><img src="../static/LOGO MRP.png" width="180" height="100"></h2>
+                    
+                <nav>
+                        <ul class="Login"></ul>
+                            <li><a href="/" >Menu</a></li>
+                            <li><a href="/terror" >Terror</a></li>
+                            <li><a href="/aventura">Aventura</a></li>
+                            <li><a href="/medicina" >Medicina</a></li>
+                            <li><a href="/programacao" >Programação</a></li>
+                            <li><a href="/advocacia" >Advocacia</a></li>
+                        
+                        </ul>
+                    </nav>
+                   
+                        <main>
+                            
+                            <ul class="Produtos">
+                                {% for produto in produtos%}
+                                <li>
+                                    <img src="{{ produto[2] }}" width="180" height="180">
+                                    <p><h3>{{ produto[0] }}</p></h3>
+                                    <p class="preço-produto">R${{ produto[1] }},00</p><br>
+                                    <a class="bt" href="/carrinho">Comprar</a><br>
+                              
+                                </li>
+                                {%  endfor %}
+                            </ul>
+                           
+                        </main>
+                </div>
+            <footer>
+                <img src="../static/LOGO MRP.png" width="120" height="60">
+                <p>Copyright MRP 2021</p>
+            </footer>
+            
+        </body>
+        
+</html>

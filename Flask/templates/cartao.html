@@ -1,0 +1,131 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Telamenupro.css') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+
+    <title>pedidos</title>
+  </head>
+  <body style="min-width:372px;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom shadow-sm mb-3">
+      <div class="container">
+          <a class="navbar-brand" href=""><strong>Livraria MRP</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" 
+          data-target=" navbar-collapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse">
+            
+          <ul class="navbar-nav flex-grow-1">
+              <li class="nav-item">
+                  <a href="#" class="nav-link text-white">Login/Cadastro</a>
+          
+              </li>
+                  
+          </ul>
+        
+        <div class="align-self-end">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a href="/" class="nav-link text-white">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/minhaconta" class="nav-link text-white">Minha Conta</a>
+                
+                    </li>
+                    <li class="nav-item">
+                        <a href="/produtos" class="nav-link text-white">Produtos</a>
+                
+                    </li>
+                    <li class="nav-item">
+                        <a href="/carrinho" class="nav-link text-white">Carrinho</a>
+                        </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white"></a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                      </svg>
+
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+  </nav>
+  <header>
+      
+     <title>Cartão de Crédito/Debito</title>
+  </head>
+<body>
+    <div style="width:50%;margin:auto;border-radius:20px;padding:40px;border:solid black 5px;background-color:#d9534f">
+      <div>
+        <img style="display:block;border-radius:10px; width:100%" src="../static/Cartao.jpg">
+      </div>
+      <div style="display:block;width:50%;margin:auto">
+        <form method="POST" action="/pagamento" style="display:inline-block;width:100%;padding-top:10%"> 
+        
+          <input style="display:block;width:100%;margin:auto;margin-top:3%;padding:2% 0px" type="text" name="nome" placeholder="Nome" required> </input>
+          <input style="display:block;width:100%;margin:auto;margin-top:3%;padding:2% 0px" type="number" name="numero" placeholder="Número" required> </input>
+          <input style="display:block;width:100%;margin:auto;margin-top:3%;padding:2% 0px" type="number" name="cvv" placeholder="CVV" required> </input>
+          <input style="display:block;width:100%;margin:auto;margin-top:3%;padding:2% 0px" type="number" name="data" placeholder="Data" required> </input>
+          <button style="display:block;width:100%;margin:auto;margin-top:3%;padding:2% 0px" id="btn" type="submit" value="enviar"> Enviar </button>
+        </form> 
+      </div>
+    </div>
+    <br><br><br>
+    
+    <h2>Meus Cartões</h2>
+    <table class="table table-striped table-responsive table-bordered">
+      <thead>
+          <tr>
+              <th>Nome </th>
+              <th>Número</th>
+          </tr>
+      </thead>
+      <tbody>
+      {% for registrado in registrados %}
+                      <tr>
+                          <td>{{ registrado[0] }}</td>
+                          <td>{{ registrado[1] }}</td>
+                          <td><a class="bt" href="{{ url_for('pedidos', total = total  ) }}">Usar este Cartão</a><br></td>                        
+                      </tr>
+      {% endfor %}
+
+      
+      </tbody>
+      
+      </table>
+      <tr>
+        <br><img src="../static/Boleto.jpg" width="180" >
+        <td><a class="bt" href="{{ url_for('pedidos', total = total  ) }}">Pagar por Boleto</a><br></td>                        
+      </tr> 
+
+    </div>
+    <br><p><h3>Subtotal:R${{"%0.2f"|format(total|float)}}</h3></p>
+
+    
+</body>
+<br><br><br><br>
+<footer class="border-top fixed-bottom text-muted bg-light">
+  <div class="container">
+      <div class="row py-3">
+          <div class="col-12 col-md-4 text-center text-md-left">
+             <br> &copy; 2021-Livraria MRP</br>
+          </div>
+          <div class="col-12 col-md-4 text-center">
+              <a href="" class="col-12 col-md-4 text-dark"></a>
+              <img src="../static/LOGO MRP.png" width="120" height="60">
+          </div>
+      </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>
+</html>

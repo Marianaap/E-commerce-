@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='telaLogin.css') }}">>
+    <title>Login</title>
+</head>
+    <body>
+        
+        <main class="login">
+        <div class="login_container">
+        <h2 class="login_title">Já sou cliente MRP</h2>
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %} 
+            <ul id="messages" class="list-unstyled">
+            {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+        
+        <form method="POST" action="/autenticar">
+        <input class="login_input" type="email" name="email" placeholder="email">
+        <span class="login_input_border"></span>
+        <input class="login_input" type="password" name ="senha" placeholder="senha">
+        <span class="login_input_border"></span>
+        <button class="login_submit">Entrar</button>
+        </form>
+       <!--<a class= "login_reset" href="#">Esqueci a Senha</a> -->
+        </div>
+            <div class="cadastro_container">
+            <h2 class="cadastro_title">Ainda não é cliente?</h2>
+            <form class="cadastro_form">
+            <button> <a href="/cadastro" class="login_submit">Cadastre-se</a></button> <br><br>
+            
+            
+            <img src="../static/LOGO MRP.png"  width=130 height=70> <br>
+            &copy 2021 Livraria MRP 
+            </form>
+            </div>
+ 
+             </form>
+        </main>
+    </body>
+
+
+</html>

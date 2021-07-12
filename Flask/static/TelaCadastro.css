@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: sans-serif;
+
+}
+body {
+    background-image: url(fundocadastro.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.form{
+
+    background-color: #d3d3d3;
+    width: 30%;
+    height: 1300px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.cadastro--container{
+    box-sizing: border-box;
+    padding: 100px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.endereço--container {
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+input {
+    border-radius:200px;;
+    height: 40px;
+    border: none;
+}
+button {
+    border: none;
+    border-radius: 10px 20px 30px
+}
